@@ -1,4 +1,4 @@
-var arrayValue = [1, 2, 3, 4, 5];
+var arrayValue = [1, 2, 3, 4];
 
 function reverseArrayInPlace(array) {
   var div=Math.floor(array.length/2);
@@ -12,4 +12,4 @@ function reverseArrayInPlace(array) {
 console.log(reverseArrayInPlace(arrayValue));
 // undefined
 console.log(arrayValue);
-// [4, 3, 1, 2, 3, 4, 5, 2, 1]
+// [4, 3, 1, 2, 3, 4, 2, 1]
