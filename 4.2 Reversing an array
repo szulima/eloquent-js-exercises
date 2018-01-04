@@ -1,9 +1,15 @@
-function reverseArray(array) {
-  var reverse = [];
-  for (i=array.length-1; i>=0; i--)
-    reverse[i] = array.shift();
-  return reverse;
+var arrayValue = [1, 2, 3, 4, 5];
+
+function reverseArrayInPlace(array) {
+  var div=Math.floor(array.length/2);
+  for (i=0; i<div;i++) {
+    array.push(div-i);
+    array.unshift(div+1+i);  
+  }
+  
 }
 
-console.log(reverseArray(["A","B","C"]));
-// ["C", "B", "A"]
+console.log(reverseArrayInPlace(arrayValue));
+// undefined
+console.log(arrayValue);
+// [4, 3, 1, 2, 3, 4, 5, 2, 1]
