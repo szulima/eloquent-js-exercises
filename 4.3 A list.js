@@ -5,5 +5,17 @@ function arrayToList(array) {
   return list
 }
 
+function listToArray(list) {
+  var array = [];
+  while (list.rest != null) {
+    array.push(list.value);
+    list=list.rest;
+  }
+  array.push(list.value);
+  return array;
+}
+
 console.log(arrayToList([10, 20, 30, 40]));
 // { value: 10, rest: {value: 20, rest: {value:	30, rest:	{value: 40, rest: null }}}}
+console.log(listToArray(arrayToList([10, 20, 30])));
+// [10, 20, 30]
