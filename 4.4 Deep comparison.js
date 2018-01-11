@@ -1,5 +1,5 @@
 function deepEqual (val1, val2) {
-  if ((typeof (val1 && val2) == "object") && (typeof (val1 || val2) != null)) {
+  if ((typeof (val1 && val2) == "object") && ((val1 && val2) != null)) {
     var count1 = 0, count2 = 0;
     for (x in val1) count1++;
     for (x in val2) count2++;
@@ -12,7 +12,7 @@ function deepEqual (val1, val2) {
     }
     else return false;
   }
-  else if (val1 == val2)
+  else if (val1 === val2)
     return true;
   else return false;
 }
