@@ -8,23 +8,11 @@ ancestry.forEach(function(person) {
   byName[person.name] = person;
 });
 
-var hasKnownMother = [];
-ancestry.filter(function(person) {
+var agedif = average(ancestry.filter(function (person) {
   return byName[person.mother];
-}).forEach(function (person) {
-  return hasKnownMother.push(person.born);
-});
+}).map(function (person) {
+    return person.born - byName[person.mother].born;
+  }));
 
-var motherBorn = [];
-ancestry.filter(function(person) {
-  return byName[person.mother];
-}).map(function(mum){
-  return motherBorn.push(byName[mum.mother].born);
-});
-
-var age=[];
-for (i=0;i<motherBorn.length;i++) {
-  age.push(hasKnownMother[i] - motherBorn[i]);
-};
-console.log(average(age)); 
+console.log(agedif);
 // 31.22222222222222
