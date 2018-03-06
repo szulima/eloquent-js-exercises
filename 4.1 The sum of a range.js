@@ -28,3 +28,4 @@ console.log(sum(range(10,1,-1)));
 // 55
 console.log(range(2,5,-1));
 // []
+console.log("Mep");
